@@ -609,6 +609,17 @@ compaction_descriptor size_tiered_compaction_strategy::get_sstables_for_compacti
 
     auto buckets = get_buckets(candidates);
 
+    if (logger.is_enabled(logging::log_level::debug)) {
+       int level = 0;
+       for (auto& bucket : buckets) {
+           std::vector<sstring> sstables_generation_and_size;
+           sstables_generation_and_size.resize(bucket.size());
+           std::transform(bucket.begin(),bucket.end(),sstables_generation_and_size.begin(), [](auto& sstable) { return seastar::format("({},{})",sstable->generation(),sstable->data_size()); });
+           logger.debug("size_tiered: level {} (generation,data_size) {}", level, ::join(" ",sstables_generation_and_size));
+           level++;
+       }
+    }
+
     std::vector<sstables::shared_sstable> most_interesting = most_interesting_bucket(std::move(buckets), min_threshold, max_threshold);
     if (most_interesting.empty()) {
         // nothing to do
