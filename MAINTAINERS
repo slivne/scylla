@@ -1,0 +1,61 @@
+M: Maintainer with commit access
+R: Reviewer
+F: Filename, directory, or pattern for the subsystem
+
+---
+
+COMMITLOG
+R: Calle Wilund <calle@scylladb.com>
+F: db/commitlog/*
+
+CQL TRANSPORT LAYER
+M: Pekka Enberg <penberg@scylladb.com>
+F: transport/*
+
+GOSSIP
+R: Asias He <asias@scylladb.com>
+F: gms/*
+
+DOCKER
+M: Pekka Enberg <penberg@scylladb.com>
+F: dist/docker/*
+
+LSA
+M: Tomasz Grabiec <tgrabiec@scylladb.com>
+M: Paweł Dziepak <pdziepak@scylladb.com>
+F: utils/logalloc*
+
+PACKAGING
+R: Takuya ASADA <syuu@scylladb.com>
+F: dist/*
+
+REPAIR
+R: Asias He <asias@scylladb.com>
+F: repair/*
+
+SCHEMA MANAGEMENT
+M: Tomasz Grabiec <tgrabiec@scylladb.com>
+M: Pekka Enberg <penberg@scylladb.com>
+M: Duarte Nunes <duarte@scylladb.com>
+F: db/schema_tables*
+F: db/legacy_schema_migrator*
+F: schema*
+
+SSTABLES
+R: Raphael S. Carvalho <raphaelsc@scylladb.com>
+R: Glauber Costa <glauber@scylladb.com>
+R: Nadav Har'El <nyh@scylladb.com>
+F: sstables/*
+
+STREAMING
+R: Asias He <asias@scylladb.com>
+F: streaming/*
+
+THRIFT TRANSPORT LAYER
+M: Duarte Nunes <duarte@scylladb.com>
+F: thrift/*
+
+THE REST
+M: Avi Kivity <avi@scylladb.com>
+F: *
+F: */
